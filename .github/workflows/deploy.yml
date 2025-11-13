@@ -21,7 +21,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install AWS CLI
-        uses: aws-actions/aws-cli-action@v2
+        uses: unfor19/install-aws-cli-action@v1
+        with:
+        version: 2
+        verbose: false
+        arch: amd64
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
