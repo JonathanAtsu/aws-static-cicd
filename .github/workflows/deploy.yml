@@ -36,3 +36,8 @@ jobs:
       - name: Upload static file to S3
         run: |
           aws s3 cp . s3://project.atsu.online/ --recursive
+      - name: Invalidate CloudFront cache
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: EOEW355G4FNJS
+          PATHS: "/*"
